@@ -1,0 +1,273 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{56FC1E4D-7BEF-4BEC-B031-CF972CB11C04}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Fraysa.MapleStory.Studio</RootNamespace>
+    <AssemblyName>MapleStory Studio</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>MapleStory.Studio.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Magick.NET-Q8-AnyCPU, Version=7.8.0.0, Culture=neutral, PublicKeyToken=2004825badfa91ec, processorArchitecture=MSIL">
+      <HintPath>..\packages\Magick.NET-Q8-AnyCPU.7.8.0\lib\net40\Magick.NET-Q8-AnyCPU.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio, Version=1.8.4.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.8.4\lib\net35\NAudio.dll</HintPath>
+    </Reference>
+    <Reference Include="ScintillaNET, Version=3.6.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\jacobslusser.ScintillaNET.3.6.3\lib\net40\ScintillaNET.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\ModernListView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ModernSplitter.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ModernTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ModernTreeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NativeMethods.cs" />
+    <Compile Include="Controls\NodeView\Node.cs" />
+    <Compile Include="Controls\NodeView\NodeCollection.cs" />
+    <Compile Include="Controls\NodeView\NodeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\NodeView\NodeViewAction.cs" />
+    <Compile Include="Controls\NodeView\NodeViewCancelEventArgs.cs" />
+    <Compile Include="Controls\NodeView\NodeViewEventArgs.cs" />
+    <Compile Include="Controls\NodeView\NodeViewLabelEditEventArgs.cs" />
+    <Compile Include="Controls\NodeView\NodeViewMouseClickEventArgs.cs" />
+    <Compile Include="Controls\NodeView\NodeViewMouseHoverEventArgs.cs" />
+    <Compile Include="Controls\ToolStripModernTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\VisualStudioColorTable.cs" />
+    <Compile Include="Controls\VisualStudioRenderer.cs" />
+    <Compile Include="Editors\AudioEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\AudioEditor.Designer.cs">
+      <DependentUpon>AudioEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\EditorBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\EditorBase.Designer.cs">
+      <DependentUpon>EditorBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\EditorContainer.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Editors\ExternalEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\ExternalEditor.Designer.cs">
+      <DependentUpon>ExternalEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\ImageEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\ImageEditor.Designer.cs">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Editors\TextEditor.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Editors\TextEditor.Designer.cs">
+      <DependentUpon>TextEditor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageForm.Designer.cs">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GameProject.cs" />
+    <Compile Include="IniFile.cs" />
+    <Compile Include="Nodes\DirectoryNode.cs" />
+    <Compile Include="Nodes\ExecutableNode.cs" />
+    <Compile Include="Nodes\FileNode.cs" />
+    <Compile Include="Nodes\ImageNode.cs" />
+    <Compile Include="Nodes\LibraryNode.cs" />
+    <Compile Include="Nodes\ProjectNode.cs" />
+    <Compile Include="Nodes\ProjectNodeView.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Nodes\WzAudioNode.cs" />
+    <Compile Include="Nodes\WzDirectoryNode.cs" />
+    <Compile Include="Nodes\WzImageNode.cs" />
+    <Compile Include="Nodes\WzNode.cs" />
+    <Compile Include="Nodes\WzStringNode.cs" />
+    <Compile Include="Nodes\WzSubPropertyNode.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <EmbeddedResource Include="Editors\AudioEditor.resx">
+      <DependentUpon>AudioEditor.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\EditorBase.resx">
+      <DependentUpon>EditorBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\ExternalEditor.resx">
+      <DependentUpon>ExternalEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\ImageEditor.resx">
+      <DependentUpon>ImageEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Editors\TextEditor.resx">
+      <DependentUpon>TextEditor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageForm.resx">
+      <DependentUpon>MessageForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MapleStory.png" />
+    <None Include="Resources\XmlFile.png" />
+    <None Include="Resources\WordWrap.png" />
+    <None Include="Resources\Window.png" />
+    <None Include="Resources\UnknownFile.png" />
+    <None Include="Resources\TxtFile.png" />
+    <None Include="Resources\Transparent.png" />
+    <None Include="Resources\Sound.png" />
+    <None Include="Resources\Search.png" />
+    <None Include="Resources\Save.png" />
+    <None Include="Resources\Restore.png" />
+    <None Include="Resources\RegularExpression.png" />
+    <None Include="Resources\Refresh.png" />
+    <None Include="Resources\Pack.png" />
+    <None Include="Resources\OpenFolder.png" />
+    <None Include="Resources\OpenFile.png" />
+    <None Include="Resources\Library.png" />
+    <None Include="Resources\Key.png" />
+    <None Include="Resources\Image.png" />
+    <None Include="Resources\Forward.png" />
+    <None Include="Resources\Font.png" />
+    <None Include="Resources\FolderOpen.png" />
+    <None Include="Resources\FolderClosed.png" />
+    <None Include="Resources\Filter.png" />
+    <None Include="Resources\File.png" />
+    <None Include="Resources\FavoriteYes.png" />
+    <None Include="Resources\FavoriteNo.png" />
+    <None Include="Resources\Delete.png" />
+    <None Include="Resources\Database.png" />
+    <None Include="Resources\Cube.png" />
+    <None Include="Resources\CopyPath.png" />
+    <None Include="Resources\CaseSensitive.png" />
+    <None Include="Resources\Brackets.png" />
+    <None Include="Resources\BmlFile.png" />
+    <None Include="Resources\Backward.png" />
+    <None Include="Resources\Stop.png" />
+    <None Include="Resources\Start.png" />
+    <None Include="Resources\MsgIconQuestion.png" />
+    <None Include="Resources\MsgIconInformation.png" />
+    <None Include="Resources\MsgIconError.png" />
+    <None Include="Resources\Exit.png" />
+    <None Include="Resources\AppButton.png" />
+    <None Include="Resources\About.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Error.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exclamation.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Exclamation1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Information1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Question.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="MapleStory.Studio.ico" />
+    <None Include="Resources\settings.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Fraysa.MapleStory\Fraysa.MapleStory.csproj">
+      <Project>{d11cf7e9-23c2-47b9-a729-5b52d16db6da}</Project>
+      <Name>Fraysa.MapleStory</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
